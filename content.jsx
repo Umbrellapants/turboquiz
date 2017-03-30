@@ -15,7 +15,7 @@ export default class App extends React.Component{
 						handleStartClick={this.props.handleStartClick.bind(this)}
 					/>
 				</div>
-			)
+			);
 		}
 		else{
 			return(
@@ -26,7 +26,7 @@ export default class App extends React.Component{
 					<QArea />
 					<AArea />
 				</div>
-			)
+			);
 		}
 	}
 }

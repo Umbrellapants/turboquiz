@@ -107,15 +107,52 @@
 			.startpage{
 				height: 100%;
 				width: 100%;
-				.startButton{
+				#introText{
+					position: absolute;
+					height: 100px;
+					width: 100%;
+					top: 0px;
+					text-align: center;
+					font-size: 36px;
+					color: black;
+				}
+				#subText{
+					position: absolute;
+					height: 100px;
+					width: 100%;
+					bottom: 0px;
+					text-align: center;
+					font-size: 36px;
+					color: black;					
+				}
+				#startButton{
 					line-height: 100px;
 					text-align: center;
 					cursor: pointer;
+			    position: absolute;
+			    left: 125px;
+			    top: 150px;
 					width: 50%;
 					height: 100px;
 					color: white;
+					z-index: 20;
 					background-color: red;
 				}
+				#startGameCountDown{
+					line-height: 200px;
+					text-shadow: 2px 2px 8px #FF0000;
+					z-index: 10;
+			    height: 200px;
+			    position: absolute;
+			    top: 100px;
+			    width: 100%;
+			    text-align: center;
+			    font-size: 80px;
+			    color: orange;					
+				}
+			}
+			.hide{
+				display: none;
 			}
 		}
 	}
