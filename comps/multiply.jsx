@@ -4,7 +4,7 @@ export default class Multiply extends React.Component{
 	render(){
 		return(
 			<div className='multiply'>
-				<div className='multiplyHeader'>Multiplyer:</div>
+				<div className='multiplyHeader'>Multiplier:</div>
 				<div className='multiplyValue'>5</div>
 			</div>
 		);
