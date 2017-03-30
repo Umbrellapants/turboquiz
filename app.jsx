@@ -1,17 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import style from './style.less'
-import Timer from './comps/timer.jsx'
-import Multiplyer from './comps/multiply.jsx'
-import Points from './comps/points.jsx'
+import Content from './content.jsx'
 
 export default class App extends React.Component{
+	constructor(props) {
+    super(props);
+    this.state = { 
+    	firstRender:true
+    };
+  }
+  handleStartClick(){
+  	this.setState({
+  		firstRender:false
+  	})
+  }
 	render(){
 		return(
-			<div id='appContent'>
-				<Timer />
-				<Points />
-				<Multiplyer />
+			<div id='turboQuiz'>
+				<Content 
+					renderStatus={this.state.firstRender}
+					handleStartClick={this.handleStartClick.bind(this)}
+				/>
 			</div>
 		)
 	}

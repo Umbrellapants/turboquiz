@@ -8,75 +8,115 @@
 	height: 400px;
 	margin: auto;
 	background-color: green;
-	#appContent{
-		height: 100%;
-		width:100%;
-		background-color: lightblue;
+	#turboQuiz{
 		position: relative;
-		.pointsBar{
-			position: absolute;
-			background-color: red;
-			height: 50px;
-			width: 50%;
-			left: 25%;
-		}
-		.multiply{
-			position: absolute;
-			background-color: snow;
-			height: 50%;
-			width: 25%;
-			right: 0px;
-			text-align: center;
-			.multiplyHeader{
-				font-size: 24px;
+    height: 100%;
+    width: 100%;
+		#appContent{
+			height: 100%;
+			width:100%;
+			background-color: lightblue;
+			position: relative;
+			.aArea{
+				width: 100%;
+				height: 50%;
+				position: absolute;
+				bottom: 0;
+				.aButton{
+			    margin: 35px 0px 0px 6.5%;
+			    width: 40%;
+			    height: 50px;
+			    background-color: azure;
+			    display: inline-block;
+			    cursor: pointer;
+				}
 			}
-			.multiplyValue{
-
-				font-size: 80px;
-				background-color: brown;
+			.questionArea{
+				position: absolute;
+	    	height: 150px;
+	    	top: 50px;
+	    	left: 25%;
+				width: 50%;
+				background: aqua;
+			}
+			.pointsBar{
+				position: absolute;
+				background-color: red;
+				height: 50px;
 				width: 50%;
 				left: 25%;
-				bottom: 0px;
-				position: absolute;
 			}
-		}
-		.timer{
-			position: absolute;
-			background-color: green;
-			height: 50%;
-			width: 25%;
-			text-align: center;
-			color: orange;
-			.timerNumber{
-				font-size: 80px;
-				background-color: brown;
-				width: 50%;
-				left: 25%;
-				bottom: 0px;
+			.multiply{
 				position: absolute;
-			}
-		}
-		.questionBox{
-			position: absolute;
-			height: 50%;
-			width: 50%;
-			background-color: white;
-			.text{
+				background-color: snow;
+				height: 50%;
+				width: 25%;
+				right: 0px;
 				text-align: center;
-				font-size: 24px;
-				color: black;
+				.multiplyHeader{
+					font-size: 24px;
+				}
+				.multiplyValue{
+
+					font-size: 80px;
+					background-color: brown;
+					width: 50%;
+					left: 25%;
+					bottom: 0px;
+					position: absolute;
+				}
 			}
-			.image{
+			.timer{
+				position: absolute;
+				background-color: green;
+				height: 50%;
+				width: 25%;
+				text-align: center;
+				color: orange;
+				.timerNumber{
+					font-size: 80px;
+					background-color: brown;
+					width: 50%;
+					left: 25%;
+					bottom: 0px;
+					position: absolute;
+				}
+			}
+			.questionBox{
+				position: absolute;
+				height: 50%;
+				width: 50%;
+				background-color: white;
+				.text{
+					text-align: center;
+					font-size: 24px;
+					color: black;
+				}
+				.image{
+
+				}
 
 			}
-
-		}
-		.answers{
-			position: absolute;
-			bottom: 0px;
-			height: 50%;
-			width: 100%;
-			background-color: yellow;
+			.answers{
+				position: absolute;
+				bottom: 0px;
+				height: 50%;
+				width: 100%;
+				background-color: yellow;
+			}
+			.startpage{
+				height: 100%;
+				width: 100%;
+				.startButton{
+					line-height: 100px;
+					text-align: center;
+					cursor: pointer;
+					width: 50%;
+					height: 100px;
+					color: white;
+					background-color: red;
+				}
+			}
 		}
 	}
 }
