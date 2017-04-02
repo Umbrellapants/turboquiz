@@ -12,6 +12,7 @@ export default class App extends React.Component{
 			return (
 				<div id='appContent'>
 					<Startpage 
+						startCount={this.props.startCount}
 						handleStartClick={this.props.handleStartClick.bind(this)}
 					/>
 				</div>
@@ -20,11 +21,11 @@ export default class App extends React.Component{
 		else{
 			return(
 				<div id='appContent'>
-					<Timer />
-					<Points />
-					<Multiplyer />
+					<Timer gameCounter={this.props.gameCounter}/>
+					<Points score={this.props.score} multiply={this.props.multiply}/>
+					<Multiplyer multiply={this.props.multiply} />
 					<QArea />
-					<AArea />
+					<AArea questionClick={this.props.questionClick.bind(this)}/>
 				</div>
 			);
 		}
