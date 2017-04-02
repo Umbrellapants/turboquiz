@@ -10,7 +10,7 @@ export default class AArea extends React.Component{
 					onClick={this.props.handleStartClick.bind(this)}>
 					START!
 				</div>
-				<div id='startGameCountDown'></div>
+				<div id='startGameCountDown'>{this.props.startCount}</div>
 				<div id='subText' className='hide'>GAME STARTING! GET READY!!!</div>
 			</div>
 		);
