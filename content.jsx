@@ -24,8 +24,15 @@ export default class App extends React.Component{
 					<Timer gameCounter={this.props.gameCounter}/>
 					<Points score={this.props.score} multiply={this.props.multiply}/>
 					<Multiplyer multiply={this.props.multiply} />
-					<QArea />
-					<AArea questionClick={this.props.questionClick.bind(this)}/>
+					<QArea 
+						questions={this.props.questions} 
+						questionNumber={this.props.questionNumber}
+					/>
+					<AArea 
+						questionClick={this.props.questionClick.bind(this)}
+						questions={this.props.questions} 
+						questionNumber={this.props.questionNumber}						
+					/>
 				</div>
 			);
 		}
