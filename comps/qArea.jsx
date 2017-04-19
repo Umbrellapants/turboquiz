@@ -6,10 +6,10 @@ export default class QArea extends React.Component{
 			<div className='questionArea'>
 				<div className='qContent'>
 					<div className='qText'>
-						This is a Q 
+						{this.props.questions.data[this.props.questionNumber].questText} 
 					</div>
 					<div className='qImg'>
-					
+						<img src={this.props.questions.data[this.props.questionNumber].questImg} />					
 					</div>
 				</div>
 			</div>

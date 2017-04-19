@@ -15,11 +15,13 @@
   },
   "main": "entry.js",
   "dependencies": {
+    "axios": "^0.16.1",
     "babel": "",
     "babel-core": "",
     "babel-loader": "",
     "babel-preset-es2015": "",
     "babel-preset-react": "",
+    "fetch": "^1.1.0",
     "jquery": "^3.1.1",
     "jsx": "",
     "less": "",
