@@ -6,6 +6,6 @@
   </head>
   <body>
     <div id="app"></div>
- 	<script src="bundle.js"></script> 
+ 	<script src="./appbundle.js"></script> 
   </body>
 </html>
