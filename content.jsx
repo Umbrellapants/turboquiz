@@ -18,7 +18,7 @@ export default class App extends React.Component{
 				</div>
 			);
 		}
-		else{
+		else if(this.props.gameOver != true){
 			return(
 				<div id='appContent'>
 					<Timer gameCounter={this.props.gameCounter}/>
@@ -33,6 +33,15 @@ export default class App extends React.Component{
 						questions={this.props.questions} 
 						questionNumber={this.props.questionNumber}						
 					/>
+				</div>
+			);
+		}
+		else{
+			return(
+				<div>
+					<div>game over</div>
+					<div>{'you got '+this.props.score+' points'}</div>
+					<div>{'you got '+this.props.multiplyChecker+' correct answers'}</div>
 				</div>
 			);
 		}

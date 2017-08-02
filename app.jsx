@@ -11,6 +11,7 @@ export default class App extends React.Component{
     	quizId:1,
     	stopTime:false,	// control timers
     	gameCounter: 3000, // time 
+    	gameOver:false, // Checks to see if the game has ended
     	firstRender:true, // check to render startpage or gamearea
     	countDownStart:3,	// number to count down from
     	startCount:false,	// checks if startpage should start counting down
@@ -27,6 +28,21 @@ export default class App extends React.Component{
   }
   componentWillMount() {
   	this.fetchBranches();
+  }
+  progressionCheck(){
+  	console.log('progressionCheck');
+  	console.log(this.state.branch.length);
+  	console.log(this.state.branchNumber);
+  	console.log('progressionCheck end');  	
+  	if(this.state.branch.length > this.state.branchNumber +1){
+  		this.branchChange();
+  	}
+  	else{
+  		this.setState({
+  			gameOver:true,
+  			stopTime:true
+  		})
+  	}
   }
   branchChange(){
 	  this.setState({
@@ -50,21 +66,14 @@ export default class App extends React.Component{
 	  });
   }
   fetchBranches(){
-		axios.get('./dbStuff/fetchBranches.php?quizId='+this.state.quizId,{
+		axios.get('../dbStuff/fetchBranches.php?quizId='+this.state.quizId,{
     	dataType: 'json'})
    	.then(data =>{
    		this.shuffleArray(data.data);
-     	//console.log(data);
 	  });  	
   }
   fetchQuestions(plusBranch){
-  	console.log('**plusBranch**');
-  	console.log(plusBranch);
-
-  	console.log('**branchNumber**');
-  	console.log(this.state.branchNumber);
-
-  	axios.get('./dbStuff/questions.php?quizId='+this.state.quizId+'&branch='+this.state.branch[plusBranch],{
+  	axios.get('../dbStuff/questions.php?quizId='+this.state.quizId+'&branch='+this.state.branch[plusBranch],{
     	dataType: 'json'})
    	.then(data =>{
    		this.setState({
@@ -100,16 +109,10 @@ export default class App extends React.Component{
 	  	});
   	}
   	else{
-  		console.log('THIS WAS THE WRONG ANSWER!');
-			this.branchChange();
+			this.progressionCheck();
   	}
-  	console.log(this.state.questions.data[this.state.questionNumber].answer);
-  	console.log(answerId);
   }
   countDownHandler(){
-/*	  console.log('********');
-	  console.log(this.state.questions);
-	  console.log('********');*/
 		var gameInterval = setInterval(function(){
 	    if(this.state.stopTime == true){
 				clearInterval(gameInterval);
@@ -120,7 +123,8 @@ export default class App extends React.Component{
 		    });
 		    if(this.state.gameCounter <= 0){
 					console.log('too slow');
-					this.branchChange();
+					this.progressionCheck();
+					//this.branchChange();
 		    }
 		  }
     }.bind(this),10);      	
@@ -146,6 +150,8 @@ export default class App extends React.Component{
 		return(
 			<div id='turboQuiz'>
 				<Content
+					multiplyChecker={this.state.multiplyChecker}
+					gameOver={this.state.gameOver}
 					questionNumber={this.state.questionNumber}
 					multiply={this.state.multiply}
 					score={this.state.score}
